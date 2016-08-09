@@ -16,6 +16,8 @@ main() {
 	rm --force /etc/apache2/sites-available/default-ssl.conf
 	rm --force /etc/apache2/sites-enabled/000-default.conf
 
+	a2enmod headers proxy rewrite setenvif
+
 	systemctl restart apache2
 }
 

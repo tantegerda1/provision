@@ -22,6 +22,8 @@ main() {
 	echo 'locales	locales/locales_to_be_generated	multiselect	de_AT.UTF-8 UTF-8' | debconf-set-selections
 	echo -e "de_AT.UTF-8 UTF-8\nen_US.UTF-8 UTF-8" > /etc/locale.gen
 	dpkg-reconfigure locales
+	echo 'console-setup	console-setup/charmap47	select	UTF-8' | debconf-set-selections
+	dpkg-reconfigure console-setup
 	localectl set-locale LANG="de_AT.utf-8"
 	localectl set-locale LC_COLLATE="de_AT.utf-8"
 

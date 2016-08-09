@@ -21,7 +21,6 @@ zend_extension=xdebug.so
 xdebug.idekey = xdebug
 xdebug.max_nesting_level = 400
 xdebug.remote_autostart = on
-xdebug.remote_connect_back = on
 xdebug.remote_enable = on
 xdebug.remote_host = ${xdebugremotehost}
 EOF

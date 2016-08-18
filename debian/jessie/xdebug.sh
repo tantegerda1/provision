@@ -25,7 +25,14 @@ xdebug.remote_enable = on
 xdebug.remote_host = ${xdebugremotehost}
 EOF
 
-	systemctl restart php5-fpm
+
+	if dpkg-query -W -f='${Status}' php5-fpm 2>/dev/null | grep -q "ok installed" ; then
+		systemctl restart php5-fpm
+	fi
+
+	if dpkg-query -W -f='${Status}' libapache2-mod-php5 2>/dev/null | grep -q "ok installed" ; then
+		systemctl restart apache2
+	fi
 }
 
 

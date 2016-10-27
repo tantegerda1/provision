@@ -17,7 +17,7 @@ main() {
 	fi
 
 
-    cat > /etc/php/conf.g/xdebug.ini << EOF
+    cat > /etc/php/conf.d/xdebug.ini << EOF
 zend_extension=xdebug.so
 
 xdebug.idekey = xdebug

@@ -17,7 +17,7 @@ main() {
 	all_hostnames="$1"; shift
 
 	yaourt -Syuad --noconfirm
-	rm /var/cache/pacman/pkg/*.xz
+	rm -f /var/cache/pacman/pkg/*.xz
 
 	# see https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname
 	hostnamectl set-hostname "${hostname}"

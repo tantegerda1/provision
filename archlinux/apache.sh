@@ -11,7 +11,7 @@
 #
 main() {
 
-	# see https://wiki.archlinux.org/index.php/Nginx
+	# see https://wiki.archlinux.org/index.php/Apache_HTTP_Server
 	if ! pacman --query --quiet --search '^apache$' >/dev/null ; then
 		pacman --sync --noconfirm apache
 

@@ -31,6 +31,7 @@ extension=bz2.so
 extension=exif.so
 extension=gd.so
 extension=iconv.so
+extension=mysqli.so
 extension=pdo_mysql.so
 extension=tidy.so
 

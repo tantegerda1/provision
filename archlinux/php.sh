@@ -40,6 +40,7 @@ extension=gd.so
 extension=iconv.so
 extension=mysqli.so
 extension=pdo_mysql.so
+extension=soap.so
 extension=tidy.so
 
 zend_extension=opcache.so

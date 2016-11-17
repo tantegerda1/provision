@@ -18,6 +18,13 @@ main() {
 		systemctl enable httpd
 		systemctl start httpd
 	fi
+
+	# enable rewrite module
+	if grep --extended-regex --quiet '^#?LoadModule rewrite_module modules/mod_rewrite.so$' /etc/httpd/conf/httpd.conf ; then
+		sed --regexp-extended --in-place 's@#?LoadModule rewrite_module modules/mod_rewrite.so@LoadModule rewrite_module modules/mod_rewrite.so@' /etc/httpd/conf/httpd.conf
+	else
+		echo 'LoadModule rewrite_module modules/mod_rewrite.so' >> /etc/httpd/conf/httpd.conf
+	fi
 }
 
 

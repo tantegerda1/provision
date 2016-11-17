@@ -20,6 +20,13 @@ main() {
 	else
 		echo 'access.log = /var/log/php/access.log' >> /etc/php/php-fpm.d/www.conf
 	fi
+	
+	if grep --extended-regex --quiet '^;?clear_env *=.*$' /etc/php/php-fpm.d/www.conf ; then
+		sed --regexp-extended --in-place 's@^;?clear_env *=.*@clear_env = no@' /etc/php/php-fpm.d/www.conf
+	else
+		echo 'clear_env = no' >> /etc/php/php-fpm.d/www.conf
+	fi
+
 
 	cat > /etc/php/conf.d/log.ini <<EOF
 log_errors = on

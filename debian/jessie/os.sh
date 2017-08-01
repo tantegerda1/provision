@@ -54,6 +54,7 @@ EOF
 install_packages() {
 
 	# sync package list, update preinstalled packages
+	sed -i 's/stable/jessie/g' /etc/apt/sources.list
 	apt-get --quiet -o=Dpkg::Use-Pty=0 update
 	apt-get --quiet -o=Dpkg::Use-Pty=0 --assume-yes upgrade
 	apt-get --quiet -o=Dpkg::Use-Pty=0 --assume-yes --no-install-recommends install \

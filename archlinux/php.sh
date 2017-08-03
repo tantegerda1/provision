@@ -33,6 +33,11 @@ log_errors = on
 error_log = /var/log/php/error.log
 EOF
 
+	cat > /etc/php/conf.d/limits.ini <<EOF
+max_execution_time = 240
+max_input_vars = 1500
+EOF
+
 	cat > /etc/php/conf.d/extensions.ini <<EOF
 extension=bz2.so
 extension=exif.so

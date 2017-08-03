@@ -34,6 +34,14 @@ EOF
 	ln --force --symbolic ../../conf-available/log.ini /etc/php5/cli/conf.d/30-log.ini
 	ln --force --symbolic ../../conf-available/log.ini /etc/php5/fpm/conf.d/30-log.ini
 
+	cat > /etc/php5/conf-available/limits.ini << EOF
+max_execution_time = 240
+max_input_vars = 1500
+EOF
+	ln --force --symbolic ../../conf-available/limits.ini /etc/php5/cli/conf.d/30-limits.ini
+	ln --force --symbolic ../../conf-available/limits.ini /etc/php5/fpm/conf.d/30-limits.ini
+
+
 	cat > /etc/php5/fpm/pool.d/www-changes.conf << EOF
 [www]
 clear_env = no

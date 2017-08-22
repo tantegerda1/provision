@@ -28,6 +28,13 @@ main() {
 	# see https://wiki.archlinux.org/index.php/Locale
 	cat > /etc/locale.gen <<EOF
 de_AT.UTF-8 UTF-8
+de_DE.UTF-8 UTF-8
+en_GB.UTF-8 UTF-8
+en_US.UTF-8 UTF-8
+de_AT UTF-8
+de_DE UTF-8
+en_GB UTF-8
+en_US UTF-8
 EOF
 	locale-gen
 	localectl set-locale LANG='de_AT.utf-8'

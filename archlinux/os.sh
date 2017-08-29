@@ -16,6 +16,11 @@ main() {
 	hostname="$1"; shift
 	all_hostnames="$1"; shift
 
+	if ! pacman --query --quiet --search '^reflector$' >/dev/null ; then
+		pacman --sync --noconfirm reflector
+	fi
+	reflector --age 4 --fastest 64 --latest 32 --number 16 --sort rate --save /etc/pacman.d/mirrorlist
+
 	yaourt -Syuad --noconfirm
 	rm -f /var/cache/pacman/pkg/*.xz
 

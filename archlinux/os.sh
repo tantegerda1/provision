@@ -59,6 +59,9 @@ Defaults env_keep += "HOSTING"
 EOF
 	chown root:root /etc/sudoers.d/environment
 	chmod 0440 /etc/sudoers.d/environment
+
+	echo 'export HOSTING="vagrant"' >> /etc/profile.d/environment.sh
+	chmod +x /etc/profile.d/environment.sh
 }
 
 

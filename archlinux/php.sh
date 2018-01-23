@@ -39,16 +39,16 @@ main() {
 	EOF
 
 	cat > /etc/php/conf.d/extensions.ini <<-'EOF'
-		extension=bz2.so
-		extension=exif.so
-		extension=gd.so
-		extension=iconv.so
-		extension=mysqli.so
-		extension=pdo_mysql.so
-		extension=soap.so
-		extension=tidy.so
+		extension=bz2
+		extension=exif
+		extension=gd
+		extension=iconv
+		extension=mysqli
+		extension=pdo_mysql
+		extension=soap
+		extension=tidy
 
-		zend_extension=opcache.so
+		zend_extension=opcache
 	EOF
 
 

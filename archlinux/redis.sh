@@ -21,7 +21,7 @@ main() {
 	fi
 
 	cat > /etc/php/conf.d/redis.ini <<-'EOF'
-		extension=redis.so
+		extension=redis
 	EOF
 
 

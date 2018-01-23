@@ -18,7 +18,7 @@ main() {
 
 
     cat > /etc/php/conf.d/xdebug.ini <<-EOF
-		zend_extension=xdebug.so
+		zend_extension=xdebug
 
 		xdebug.idekey = xdebug
 		xdebug.max_nesting_level = 500

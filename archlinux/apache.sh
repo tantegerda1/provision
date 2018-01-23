@@ -11,10 +11,10 @@
 #
 main() {
 	mkdir --parents /etc/systemd/system/httpd.service.d/
-	cat > /etc/systemd/system/httpd.service.d/environment_httpd.conf <<EOF
-[Service]
-EnvironmentFile=/etc/environment
-EOF
+	cat > /etc/systemd/system/httpd.service.d/environment_httpd.conf <<-'EOF'
+		[Service]
+		EnvironmentFile=/etc/environment
+	EOF
 	systemctl daemon-reload
 
 	# see https://wiki.archlinux.org/index.php/Apache_HTTP_Server

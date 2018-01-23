@@ -23,11 +23,11 @@ main() {
 		mysqladmin -u root password 'vagrant'
 		mysqladmin -u root -h dev password 'vagrant' --password=vagrant
 
-    cat > '/root/.my.cnf' << EOF
-[client]
-user=root
-password=vagrant
-EOF
+	    cat > '/root/.my.cnf' <<-'EOF'
+			[client]
+			user=root
+			password=vagrant
+		EOF
 	fi
 }
 

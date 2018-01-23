@@ -17,15 +17,15 @@ main() {
 	fi
 
 
-    cat > /etc/php/conf.d/xdebug.ini << EOF
-zend_extension=xdebug.so
+    cat > /etc/php/conf.d/xdebug.ini <<-EOF
+		zend_extension=xdebug.so
 
-xdebug.idekey = xdebug
-xdebug.max_nesting_level = 500
-xdebug.remote_autostart = on
-xdebug.remote_enable = on
-xdebug.remote_host = ${xdebugremotehost}
-EOF
+		xdebug.idekey = xdebug
+		xdebug.max_nesting_level = 500
+		xdebug.remote_autostart = on
+		xdebug.remote_enable = on
+		xdebug.remote_host = ${xdebugremotehost}
+	EOF
 
 	systemctl restart php-fpm
 }

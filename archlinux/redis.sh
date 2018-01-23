@@ -20,7 +20,7 @@ main() {
 		yaourt --sync --noconfirm php-redis
 	fi
 
-	cat > /etc/php/conf.d/redis.ini <<-EOF
+	cat > /etc/php/conf.d/redis.ini <<-'EOF'
 		extension=redis.so
 	EOF
 

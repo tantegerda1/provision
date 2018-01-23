@@ -38,9 +38,9 @@ main() {
 		echo 'HOSTING="vagrant"' >> /etc/environment
 		source /etc/environment
 	fi
-	cat > /etc/sudoers.d/environment <<EOF
-Defaults env_keep += "HOSTING"
-EOF
+	cat > /etc/sudoers.d/environment <<-'EOF'
+		Defaults env_keep += "HOSTING"
+	EOF
 	chown root:root /etc/sudoers.d/environment
 	chmod 0440 /etc/sudoers.d/environment
 

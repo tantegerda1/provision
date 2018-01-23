@@ -14,10 +14,10 @@ main() {
 
 
 	mkdir -p /etc/php5/conf-available
-	cat > /etc/php5/conf-available/log.ini << EOF
-log_errors = on
-error_log = /var/log/php/error.log
-EOF
+	cat > /etc/php5/conf-available/log.ini <<-'EOF'
+		log_errors = on
+		error_log = /var/log/php/error.log
+	EOF
 	ln --force --symbolic ../../conf-available/log.ini /etc/php5/cli/conf.d/30-log.ini
 
 	mkdir --parents /var/log/php/

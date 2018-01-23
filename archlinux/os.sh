@@ -31,16 +31,16 @@ main() {
 
 
 	# see https://wiki.archlinux.org/index.php/Locale
-	cat > /etc/locale.gen <<EOF
-de_AT.UTF-8 UTF-8
-de_DE.UTF-8 UTF-8
-en_GB.UTF-8 UTF-8
-en_US.UTF-8 UTF-8
-de_AT UTF-8
-de_DE UTF-8
-en_GB UTF-8
-en_US UTF-8
-EOF
+	cat > /etc/locale.gen <<-'EOF'
+		de_AT.UTF-8 UTF-8
+		de_DE.UTF-8 UTF-8
+		en_GB.UTF-8 UTF-8
+		en_US.UTF-8 UTF-8
+		de_AT UTF-8
+		de_DE UTF-8
+		en_GB UTF-8
+		en_US UTF-8
+	EOF
 	locale-gen
 	localectl set-locale LANG='de_AT.utf-8'
 	localectl set-locale LC_COLLATE='de_AT.utf-8'
@@ -54,9 +54,9 @@ EOF
 		echo 'HOSTING="vagrant"' >> /etc/environment
 		source /etc/environment
 	fi
-	cat > /etc/sudoers.d/environment <<EOF
-Defaults env_keep += "HOSTING"
-EOF
+	cat > /etc/sudoers.d/environment <<-'EOF'
+		Defaults env_keep += "HOSTING"
+	EOF
 	chown root:root /etc/sudoers.d/environment
 	chmod 0440 /etc/sudoers.d/environment
 

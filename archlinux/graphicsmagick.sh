@@ -10,7 +10,6 @@
 # Install graphicsmagick inside virtual machine
 #
 main() {
-
 	if ! pacman --query --quiet --search '^graphicsmagick$' >/dev/null ; then
 		pacman --sync --noconfirm graphicsmagick
 	fi

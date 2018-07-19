@@ -36,10 +36,23 @@ main() {
 		de_DE.UTF-8 UTF-8
 		en_GB.UTF-8 UTF-8
 		en_US.UTF-8 UTF-8
+		es_ES.UTF-8 UTF-8
+		fr_FR.UTF-8 UTF-8
+		pt_PT.UTF-8 UTF-8
 		de_AT UTF-8
 		de_DE UTF-8
 		en_GB UTF-8
 		en_US UTF-8
+		es_ES UTF-8
+		fr_FR UTF-8
+		pt_PT UTF-8
+		de_AT.ISO-8859-1 ISO-8859-1
+		de_DE.ISO-8859-1 ISO-8859-1
+		en_GB.ISO-8859-1 ISO-8859-1
+		en_US.ISO-8859-1 ISO-8859-1
+		es_ES.ISO-8859-1 ISO-8859-1
+		fr_FR.ISO-8859-1 ISO-8859-1
+		pt_PT.ISO-8859-1 ISO-8859-1
 	EOF
 	locale-gen
 	localectl set-locale LANG='de_AT.utf-8'

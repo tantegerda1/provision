@@ -16,8 +16,17 @@ main() {
 		systemctl start redis
 	fi
 
-	if ! yaourt --query --quiet --search '^php-redis$' >/dev/null ; then
-		yaourt --sync --noconfirm php-redis
+	if ! grep --extended-regex --quiet '^\[netztechniker\]$' /etc/pacman.conf ; then
+		cat > /etc/pacman.conf <<-'EOF'
+			[netztechniker]
+			SigLevel = Optional TrustAll
+			Server = https://packages.netztechniker.at/$arch/
+		EOF
+		pacman --sync --refresh
+	fi
+
+	if ! pacman --query --quiet --search '^php-redis$' >/dev/null ; then
+		pacman --sync --noconfirm php-redis
 	fi
 
 	cat > /etc/php/conf.d/redis.ini <<-'EOF'

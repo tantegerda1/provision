@@ -21,8 +21,8 @@ main() {
 	fi
 	reflector --age 4 --fastest 64 --latest 32 --number 16 --sort rate --save /etc/pacman.d/mirrorlist
 
-	yaourt -Syuad --noconfirm
-	rm -f /var/cache/pacman/pkg/*.xz
+	pacman -Syud --noconfirm
+	paccache -rk0
 
 	# see https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname
 	hostnamectl set-hostname "${hostname}"

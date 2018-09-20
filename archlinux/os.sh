@@ -22,6 +22,10 @@ main() {
 	reflector --age 4 --fastest 64 --latest 32 --number 16 --sort rate --save /etc/pacman.d/mirrorlist
 
 	pacman -Syud --noconfirm
+	
+	if ! pacman --query --quiet --search '^pacman-contrib$' >/dev/null ; then
+		pacman --sync --noconfirm pacman-contrib
+	fi
 	paccache -rk0
 
 	# see https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname

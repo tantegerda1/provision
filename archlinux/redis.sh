@@ -17,7 +17,7 @@ main() {
 	fi
 
 	if ! grep --extended-regex --quiet '^\[netztechniker\]$' /etc/pacman.conf ; then
-		cat > /etc/pacman.conf <<-'EOF'
+		cat >> /etc/pacman.conf <<-'EOF'
 			[netztechniker]
 			SigLevel = Optional TrustAll
 			Server = https://packages.netztechniker.at/$arch/

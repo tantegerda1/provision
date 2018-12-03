@@ -79,6 +79,13 @@ main() {
 
 	echo 'export HOSTING="vagrant"' >> /etc/profile.d/environment.sh
 	chmod +x /etc/profile.d/environment.sh
+
+	if ! pacman --query --quiet --search '^zip$' >/dev/null ; then
+		pacman --sync --noconfirm zip
+	fi
+	if ! pacman --query --quiet --search '^unzip$' >/dev/null ; then
+		pacman --sync --noconfirm unzip
+	fi
 }
 
 
